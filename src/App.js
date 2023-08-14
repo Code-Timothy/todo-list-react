@@ -1,5 +1,6 @@
 import Form from "./Form";
 import Tasks from "./Tasks";
+import Header from "./Header";
 
 const tasks = [
   {
@@ -19,7 +20,7 @@ const hideDoneTasks = false;
 function App() {
   return (
     <div className="container">
-      <h1 className="header">Lista zadań</h1>
+      <Header title="Lista zadań" />
       <div className="tile">
         <div className="tile__headerContainer">
           <h2 className="tile__header">Dodaj nowe zadanie</h2>

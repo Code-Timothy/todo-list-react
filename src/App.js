@@ -2,6 +2,7 @@ import Form from "./Form";
 import Tasks from "./Tasks";
 import Header from "./Header";
 import Buttons from "./Buttons";
+import Tile from "./Tile";
 
 const tasks = [
   {
@@ -22,19 +23,12 @@ function App() {
   return (
     <div className="container">
       <Header title="Lista zadań" />
-      <div className="tile">
-        <div className="tile__headerContainer">
-          <h2 className="tile__header">Dodaj nowe zadanie</h2>
-        </div>
-        <Form />
-      </div>
-      <div className="tile">
-        <div className="tile__headerContainer">
-          <h2 className="tile__header">Lista zadań</h2>
-          <Buttons tasks={tasks} hideDoneTasks={hideDoneTasks} />
-        </div>
-        <Tasks tasks={tasks} hideDoneTasks={hideDoneTasks} />
-      </div>
+      <Tile title="Dodaj nowe zadanie" body={<Form />} />
+      <Tile
+        title="Lista zadań"
+        body={<Tasks tasks={tasks} hideDoneTasks={hideDoneTasks} />}
+        extraHeaderContent={<Buttons tasks={tasks} hideDoneTasks={hideDoneTasks} />}
+      />
     </div>
   );
 }

@@ -18,7 +18,7 @@
     border-bottom: 2px #eee solid;
 }
 
-@media(max-width: 576px) {
+@media(max-width: 768px) {
     .tile__headerContainer {
         flex-direction: column;
         gap: 20px;

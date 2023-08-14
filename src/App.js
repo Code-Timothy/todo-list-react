@@ -1,4 +1,20 @@
 import Form from "./Form";
+import Tasks from "./Tasks";
+
+const tasks = [
+  {
+    id: 1,
+    content: "przykładowe zadanie 1",
+    done: false,
+  },
+  {
+    id: 2,
+    content: "przykładowe zadanie 2",
+    done: true,
+  },
+];
+
+const hideDoneTasks = false;
 
 function App() {
   return (
@@ -15,7 +31,7 @@ function App() {
           <h2 className="tile__header">Lista zadań</h2>
           <div className="tile__buttonsContainer"></div>
         </div>
-        <ul className="tasksList"></ul>
+        <Tasks tasks={tasks} hideDoneTasks={hideDoneTasks} />
       </div>
     </div>
   );

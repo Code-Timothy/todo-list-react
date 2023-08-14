@@ -6,7 +6,7 @@ const Form = () => (
             type="text"
             className="form__input"
             placeholder="Co jest do zrobienia ?"
-            autofocus
+            autoFocus
         />
         <button className="form__button">Dodaj zadanie</button>
     </form>

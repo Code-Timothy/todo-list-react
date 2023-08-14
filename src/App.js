@@ -3,6 +3,7 @@ import Tasks from "./Tasks";
 import Header from "./Header";
 import Buttons from "./Buttons";
 import Tile from "./Tile";
+import Container from "./Container";
 
 const tasks = [
   {
@@ -21,15 +22,23 @@ const hideDoneTasks = false;
 
 function App() {
   return (
-    <div className="container">
+    <Container>
       <Header title="Lista zadań" />
-      <Tile title="Dodaj nowe zadanie" body={<Form />} />
+      <Tile
+        title="Dodaj nowe zadanie"
+        body={<Form />}
+      />
+
       <Tile
         title="Lista zadań"
-        body={<Tasks tasks={tasks} hideDoneTasks={hideDoneTasks} />}
-        extraHeaderContent={<Buttons tasks={tasks} hideDoneTasks={hideDoneTasks} />}
+        body={
+          <Tasks tasks={tasks} hideDoneTasks={hideDoneTasks} />
+        }
+        extraHeaderContent={
+          <Buttons tasks={tasks} hideDoneTasks={hideDoneTasks} />
+        }
       />
-    </div>
+    </Container>
   );
 }
 

@@ -1,6 +1,7 @@
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Header from "./Header";
+import Buttons from "./Buttons";
 
 const tasks = [
   {
@@ -30,7 +31,7 @@ function App() {
       <div className="tile">
         <div className="tile__headerContainer">
           <h2 className="tile__header">Lista zadań</h2>
-          <div className="tile__buttonsContainer"></div>
+          <Buttons tasks={tasks} hideDoneTasks={hideDoneTasks} />
         </div>
         <Tasks tasks={tasks} hideDoneTasks={hideDoneTasks} />
       </div>

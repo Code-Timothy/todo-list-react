@@ -21,6 +21,7 @@ In this app you can:
 * HTML
 * CSS (grid, flex, media-queries)
 * BEM
+* REACT and (react hooks)
 * JavaScript ES6 + features
 * Markdown
 * Create React App

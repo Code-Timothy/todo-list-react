@@ -21,9 +21,25 @@ const tasks = [
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
+  const [tasks, setTasks] = useState([
+    {
+      id: 1,
+      content: "przykładowe zadanie 1",
+      done: false,
+    },
+    {
+      id: 2,
+      content: "przykładowe zadanie 2",
+      done: true,
+    },
+  ]);
 
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone);
+  };
+
+  const removeTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
   };
 
 
@@ -38,10 +54,18 @@ function App() {
       <Tile
         title="Lista zadań"
         body={
-          <Tasks tasks={tasks} hideDone={hideDone} />
+          <Tasks
+            tasks={tasks}
+            hideDone={hideDone}
+            removeTask={removeTask}
+          />
         }
         extraHeaderContent={
-          <Buttons tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone} />
+          <Buttons
+            tasks={tasks}
+            hideDone={hideDone}
+            toggleHideDone={toggleHideDone}
+          />
         }
       />
     </Container>

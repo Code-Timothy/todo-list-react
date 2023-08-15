@@ -6,19 +6,6 @@ import Buttons from "./Buttons";
 import Tile from "./Tile";
 import Container from "./Container";
 
-const tasks = [
-  {
-    id: 1,
-    content: "przykładowe zadanie 1",
-    done: false,
-  },
-  {
-    id: 2,
-    content: "przykładowe zadanie 2",
-    done: true,
-  },
-];
-
 function App() {
   const [hideDone, setHideDone] = useState(false);
   const [tasks, setTasks] = useState([
@@ -54,6 +41,12 @@ function App() {
     }));
   };
 
+  const setAllDone = () => {
+    setTasks(tasks.map((task) => ({
+      ...task,
+      done: true,
+    })));
+  };
 
   return (
     <Container>
@@ -78,6 +71,7 @@ function App() {
             tasks={tasks}
             hideDone={hideDone}
             toggleHideDone={toggleHideDone}
+            setAllDone={setAllDone}
           />
         }
       />

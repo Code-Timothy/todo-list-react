@@ -12,6 +12,7 @@ In this app you can:
 * mark task as done
 * set all tasks as done
 * hide tasks which are done
+Now every task are save in local storage.
 
 ## 👓 Preview
 

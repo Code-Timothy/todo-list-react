@@ -1,13 +1,13 @@
-import "./style.css";
+import { StyledTile, StyledHeaderContainer, StyledHeader } from "./styled";
 
 const Tile = ({ title, extraHeaderContent, body }) => (
-    <div className="tile">
-        <div className="tile__headerContainer">
-            <h2 className="tile__header">{title}</h2>
+    <StyledTile>
+        <StyledHeaderContainer>
+            <StyledHeader>{title}</StyledHeader>
             {extraHeaderContent}
-        </div>
+        </StyledHeaderContainer>
         {body}
-    </div>
+    </StyledTile>
 );
 
 export default Tile;

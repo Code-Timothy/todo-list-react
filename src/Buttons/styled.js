@@ -22,7 +22,9 @@ export const StyledButton = styled.button`
     }
 
     ${({ disabled }) => disabled && css`
-        color: #999;
-        cursor: default;
+        &:disabled{
+            color: #999;
+            cursor: default;
+        }
     `}
 `;

@@ -21,7 +21,7 @@ Now every task are save in local storage.
 ## 👩🏻‍💻 Technologies:
 * HTML
 * CSS (grid, flex, media-queries)
-* BEM
+* Styled-Components
 * REACT and (react hooks)
 * JavaScript ES6 + features
 * Markdown

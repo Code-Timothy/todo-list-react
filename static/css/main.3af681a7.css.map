@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.3af681a7.css","mappings":"AAAA,iBACE,kBACF,CAEA,KACE,qBAAsB,CACtB,2BACF,CAEA,KACE,qBACF","sources":["index.css"],"sourcesContent":["*, ::after, ::before {\n  box-sizing: inherit;\n}\n\nhtml {\n  box-sizing: border-box;\n  font-family: 'Lato', sans-serif;\n}\n\nbody {\n  background-color: #eee;\n}"],"names":[],"sourceRoot":""}

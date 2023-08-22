@@ -4,7 +4,7 @@ export const StyledButtons = styled.div`
     display: flex;
     gap: 20px;
 
-    @media(max-width: 768px){
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px){
         flex-direction: column;
     }
 `;
@@ -13,7 +13,7 @@ export const StyledButton = styled.button`
     background-color: transparent;
     border: none;
     font-size: 18px;
-    color: teal;
+    color: ${({ theme }) => theme.colors.primary};
     transition: 1s;
 
     &:hover{
@@ -23,7 +23,7 @@ export const StyledButton = styled.button`
 
     ${({ disabled }) => disabled && css`
         &:disabled{
-            color: #999;
+            color: ${({ theme }) => theme.colors.dustyGray};
             cursor: default;
         }
     `}

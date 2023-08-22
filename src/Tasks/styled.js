@@ -12,7 +12,7 @@ export const StyledItem = styled.li`
     gap: 10px;
     align-items: center;
     padding: 10px;
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid ${({ theme }) => theme.colors.gallery};
     word-break: break-word;
 
     ${({ hidden }) => hidden && css`
@@ -25,8 +25,8 @@ export const StyledButton = styled.button`
     justify-content: center;
     align-items: center;
     border: none;
-    background-color: green;
-    color: white;
+    background-color: ${({ theme }) => theme.colors.green};
+    color: ${({ theme }) => theme.colors.white};
     height: 30px;
     transition: 1s;
 
@@ -36,7 +36,7 @@ export const StyledButton = styled.button`
     }
 
     ${({ remove }) => remove && css`
-        background-color: red;
+        background-color: ${({ theme }) => theme.colors.red};
     `}
 `;
 

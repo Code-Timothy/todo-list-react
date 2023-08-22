@@ -11,6 +11,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: #eee;
+        background-color: ${({ theme }) => theme.colors.gallery};
     }
 `;

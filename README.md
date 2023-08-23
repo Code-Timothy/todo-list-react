@@ -22,7 +22,7 @@ Now every task are save in local storage.
 * HTML
 * CSS (grid, flex, media-queries)
 * Styled-Components
-* REACT and (react hooks)
+* REACT and (react hooks and custom hooks)
 * JavaScript ES6 + features
 * Markdown
 * Create React App

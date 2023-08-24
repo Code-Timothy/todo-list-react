@@ -1,5 +1,4 @@
 import { useTasks } from "./useTasks";
-import { useHideDone } from "./useHideDone";
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Header from "./Header";
@@ -8,13 +7,11 @@ import Tile from "./Tile";
 import Container from "./Container";
 
 function App() {
-  const {
-    hideDone,
-    toggleHideDone,
-  } = useHideDone();
 
   const {
     tasks,
+    hideDone,
+    toggleHideDone,
     removeTask,
     toggleTaskDone,
     setAllDone,

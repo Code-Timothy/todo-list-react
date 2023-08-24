@@ -1,10 +1,10 @@
 import { useTasks } from "./useTasks";
+import { StyledContainer } from "./styled";
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Header from "./Header";
 import Buttons from "./Buttons";
 import Tile from "./Tile";
-import Container from "./Container";
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
   } = useTasks();
 
   return (
-    <Container>
+    <StyledContainer>
       <Header title="Lista zadań" />
       <Tile
         title="Dodaj nowe zadanie"
@@ -45,7 +45,7 @@ function App() {
           />
         }
       />
-    </Container>
+    </StyledContainer>
   );
 }
 

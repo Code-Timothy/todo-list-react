@@ -34,10 +34,10 @@ export const StyledButton = styled.button`
         opacity: 70%;
         cursor: pointer;
     }
+`;
 
-    ${({ remove }) => remove && css`
-        background-color: ${({ theme }) => theme.colors.red};
-    `}
+export const RemoveButton = styled(StyledButton)`
+    background-color: ${({ theme }) => theme.colors.red}
 `;
 
 export const StyledParagraph = styled.p`

@@ -1,4 +1,4 @@
-import { StyledList, StyledItem, StyledButton, StyledParagraph } from "./styled";
+import { StyledList, StyledItem, StyledButton, StyledParagraph, RemoveButton } from "./styled";
 
 const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone }) => (
     <StyledList>
@@ -12,12 +12,11 @@ const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone }) => (
                 <StyledParagraph done={task.done}>
                     {task.content}
                 </StyledParagraph>
-                <StyledButton
+                <RemoveButton
                     onClick={() => removeTask(task.id)}
-                    remove
                 >
                     🗑
-                </StyledButton>
+                </RemoveButton>
             </StyledItem>
         ))}
     </StyledList>

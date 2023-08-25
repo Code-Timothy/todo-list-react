@@ -1,4 +1,4 @@
-# 📜 To Do List - Lista zadań
+# 📜 To Do List
 
 ## 🔨 Demo
 Do you wanna add some new tasks?

@@ -14,6 +14,8 @@ In this app you can:
 * hide tasks which are done
 Now every task are saves in local storage.
 
+New features soon!
+
 ## 👓 Preview
 
 ![gif how to use the app](images/how-to-use.gif)

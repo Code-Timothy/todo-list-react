@@ -30,6 +30,7 @@ export const useTasks = () => {
             });
             return updatedTasks;
         });
+        setUpdatedContent("");
     };
 
     const removeTask = (id) => {

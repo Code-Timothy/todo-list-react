@@ -6,6 +6,7 @@ export const theme = {
         white: "#ffffff",
         gallery: "#eeeeee",
         dustyGray: "#999999",
+        goldTips: "#DCBB14",
     },
 
     breakpoints: {

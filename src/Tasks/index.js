@@ -1,4 +1,4 @@
-import { StyledList, StyledItem, StyledButton, StyledParagraph, RemoveButton } from "./styled";
+import { StyledList, StyledItem, StyledButton, StyledParagraph, RemoveButton, EditButton } from "./styled";
 import { useState } from "react";
 
 const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone, editTask, setUpdatedContent, updatedContent }) => {
@@ -25,15 +25,14 @@ const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone, editTask, setUpdat
                                 value={updatedContent}
                                 onChange={(event) => setUpdatedContent(event.target.value)}
                             />
-                            <button onClick={() => setEditableTaskId(task.id)}>Edytuj</button>
-                            <button onClick={() => handleSave(task.id)}>Zapisz</button>
+                            <EditButton onClick={() => handleSave(task.id)}>✔</EditButton>
                         </>
                     ) : (
                         <>
                             <StyledParagraph done={task.done}>
                                 {task.content}
                             </StyledParagraph>
-                            <button onClick={() => setEditableTaskId(task.id)}>Edytuj</button>
+                            <EditButton onClick={() => setEditableTaskId(task.id)}>🖍</EditButton>
                         </>
                     )}
                     <RemoveButton

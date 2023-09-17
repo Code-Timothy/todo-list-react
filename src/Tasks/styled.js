@@ -8,7 +8,7 @@ export const StyledList = styled.ul`
 
 export const StyledItem = styled.li`
     display: grid;
-    grid-template-columns: 30px 1fr 30px;
+    grid-template-columns: 30px 1fr 30px 30px;
     gap: 10px;
     align-items: center;
     padding: 10px;
@@ -34,6 +34,10 @@ export const StyledButton = styled.button`
         opacity: 70%;
         cursor: pointer;
     }
+`;
+
+export const EditButton = styled(StyledButton)`
+    background-color: ${({ theme }) => theme.colors.goldTips}
 `;
 
 export const RemoveButton = styled(StyledButton)`

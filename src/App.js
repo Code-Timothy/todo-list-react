@@ -16,6 +16,9 @@ function App() {
     toggleTaskDone,
     setAllDone,
     addNewTask,
+    editTask,
+    setUpdatedContent,
+    updatedContent,
   } = useTasks();
 
   return (
@@ -34,6 +37,9 @@ function App() {
             hideDone={hideDone}
             removeTask={removeTask}
             toggleTaskDone={toggleTaskDone}
+            editTask={editTask}
+            setUpdatedContent={setUpdatedContent}
+            updatedContent={updatedContent}
           />
         }
         extraHeaderContent={

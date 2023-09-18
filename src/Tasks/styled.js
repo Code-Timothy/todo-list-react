@@ -52,3 +52,9 @@ export const StyledParagraph = styled.p`
         text-decoration: line-through;
     `}
 `;
+
+export const Input = styled.input`
+    @media(max-width: ${({ theme }) => theme.breakpoints.small}px){
+        width: 100%;
+    }
+`;

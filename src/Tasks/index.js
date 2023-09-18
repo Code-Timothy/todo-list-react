@@ -1,4 +1,4 @@
-import { StyledList, StyledItem, StyledButton, StyledParagraph, RemoveButton, EditButton } from "./styled";
+import { StyledList, StyledItem, StyledButton, StyledParagraph, RemoveButton, EditButton, Input } from "./styled";
 import { useState } from "react";
 
 const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone, editTask, setUpdatedContent, updatedContent }) => {
@@ -20,7 +20,7 @@ const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone, editTask, setUpdat
                     </StyledButton>
                     {editableTaskId === task.id ? (
                         <>
-                            <input
+                            <Input
                                 type="text"
                                 value={updatedContent}
                                 onChange={(event) => setUpdatedContent(event.target.value)}

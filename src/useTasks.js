@@ -33,6 +33,12 @@ export const useTasks = () => {
         setUpdatedContent("");
     };
 
+    const sortTasks = () => {
+        const sortedTasks = [...tasks];
+        sortedTasks.sort((a, b) => a.content.localeCompare(b.content));
+        setTasks(sortedTasks);
+    };
+
     const removeTask = (id) => {
         setTasks(tasks.filter((task) => task.id !== id));
     };
@@ -70,6 +76,7 @@ export const useTasks = () => {
     return ({
         tasks,
         hideDone,
+        sortTasks,
         toggleHideDone,
         removeTask,
         toggleTaskDone,

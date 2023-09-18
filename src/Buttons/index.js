@@ -1,9 +1,14 @@
 import { StyledButtons, StyledButton } from "./styled";
 
-const Buttons = ({ tasks, hideDone, toggleHideDone, setAllDone }) => (
+const Buttons = ({ tasks, hideDone, toggleHideDone, setAllDone, sortTasks }) => (
     <StyledButtons>
         {tasks.length > 0 && (
             <>
+                <StyledButton
+                    onClick={() => sortTasks()}
+                >
+                    Sortuj zadania
+                </StyledButton>
                 <StyledButton
                     onClick={() => toggleHideDone()}
                 >

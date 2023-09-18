@@ -11,6 +11,7 @@ function App() {
   const {
     tasks,
     hideDone,
+    sortTasks,
     toggleHideDone,
     removeTask,
     toggleTaskDone,
@@ -48,6 +49,7 @@ function App() {
             hideDone={hideDone}
             toggleHideDone={toggleHideDone}
             setAllDone={setAllDone}
+            sortTasks={sortTasks}
           />
         }
       />

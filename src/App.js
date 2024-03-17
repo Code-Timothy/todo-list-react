@@ -1,4 +1,12 @@
 import Form from "./Form";
+import Buttons from "./Buttons";
+
+const tasks = [
+  { content: "Learn some new English words!", done: false },
+  { content: "Watch a new movie!", done: true },
+];
+
+const hideDoneTasks = false;
 
 function App() {
   return (
@@ -17,7 +25,7 @@ function App() {
       <section className="section">
         <header className="section__header">
           <h2 className="section__title">Lista zadań</h2>
-          <div className="buttons"></div>
+          <Buttons tasks={tasks} hideDoneTasks={hideDoneTasks} />
         </header>
         <div className="section__body">
           <ul className="tasksList"></ul>

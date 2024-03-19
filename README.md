@@ -5,16 +5,16 @@ Do you wanna add some new tasks?
 Let's try [Here](https://code-timothy.github.io/todo-list-react/)!
 
 ## 📖 Description
-In this app you can:
+In this app, you can:
 
 * add a new task
 * remove a task
 * edit a task
-* mark task as done
+* mark a task as done
 * set all tasks as done
-* hide tasks which are done
+* hide tasks that are done
 
-New features soon!
+New features coming soon!
 
 ## 👓 Preview
 

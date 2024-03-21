@@ -45,3 +45,8 @@
 .tasksList__content--done {
     text-decoration: line-through;
 }
+
+.tasksList__content--edited {
+    border: 2px solid black;
+    border-radius: 5px;
+}

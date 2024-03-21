@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Tasks = ({ tasks, hideDone, removeTask, toggleDoneTask }) => (
+const Tasks = ({ tasks, hideDone, removeTask, toggleDoneTask, toggleIsEdit, updateTaskContent }) => (
     <ul className="tasksList">
         {tasks.map((task) =>
             <li
@@ -14,12 +14,18 @@ const Tasks = ({ tasks, hideDone, removeTask, toggleDoneTask }) => (
                     {task.done ? "✔" : ""}
                 </button>
                 <span
-                    className={`${task.done ? "tasksList__content--done" : ""}`}
+                    className={`
+                            ${task.done ? "tasksList__content--done" : ""} 
+                            ${task.isEdited ? "tasksList__content--edited" : ""}
+                        `}
+                    contentEditable={task.isEdited ? true : false}
+                    onBlur={(event) => updateTaskContent(task.id, event.target.innerText)}
                 >
                     {task.content}
                 </span>
                 <button
                     className="tasksList__button tasksList__button--edit"
+                    onClick={() => toggleIsEdit(task.id)}
                 >
                     🖊
                 </button>

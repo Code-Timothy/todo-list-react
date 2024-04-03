@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/todo-list-react/static/css/main.ec54364c.css",
-    "main.js": "/todo-list-react/static/js/main.2b9bbde7.js",
+    "main.js": "/todo-list-react/static/js/main.b0af62ec.js",
     "static/js/453.3dd2d477.chunk.js": "/todo-list-react/static/js/453.3dd2d477.chunk.js",
     "index.html": "/todo-list-react/index.html",
     "main.ec54364c.css.map": "/todo-list-react/static/css/main.ec54364c.css.map",
-    "main.2b9bbde7.js.map": "/todo-list-react/static/js/main.2b9bbde7.js.map",
+    "main.b0af62ec.js.map": "/todo-list-react/static/js/main.b0af62ec.js.map",
     "453.3dd2d477.chunk.js.map": "/todo-list-react/static/js/453.3dd2d477.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ec54364c.css",
-    "static/js/main.2b9bbde7.js"
+    "static/js/main.b0af62ec.js"
   ]
 }

@@ -9,8 +9,8 @@ import Container from "./Container";
 function App() {
   const [hideDone, setHideDone] = useState(false);
   const [tasks, setTasks] = useState([
-    { id: 1, content: "Learn some new English words!", done: false, isEdited: false },
-    { id: 2, content: "Watch a new movie!", done: true, isEdited: false },
+    { id: 1, content: "watch a new movie!", done: false, isEdited: false },
+    { id: 2, content: "learn some new English words!", done: true, isEdited: false },
   ]);
 
   const toggleHideDone = () => {
@@ -66,6 +66,20 @@ function App() {
     }));
   };
 
+  const getTasksContent = () => {
+    return tasks.map(task => task.content);
+  };
+
+  const sortTasks = () => {
+    const tasksContent = getTasksContent();
+    const sortedContents = [...tasksContent].sort();
+    const sortedTasks = sortedContents.map(content => {
+      return tasks.find(task => task.content === content);
+    });
+    const updatedTasks = sortedTasks.map((task, index) => ({ ...task, id: index + 1 }));
+    setTasks(updatedTasks);
+  };
+
   return (
     <Container>
       <Header
@@ -83,6 +97,7 @@ function App() {
             hideDone={hideDone}
             toggleHideDone={toggleHideDone}
             setAllTasksDone={setAllTasksDone}
+            sortTasks={sortTasks}
           />
         }
         body={

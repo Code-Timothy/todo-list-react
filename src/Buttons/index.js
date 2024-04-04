@@ -17,6 +17,7 @@ const Buttons = ({ tasks, hideDone, toggleHideDone, setAllTasksDone, sortTasks }
                 Ukończ wszystkie
             </button>
             <button
+                className="buttons__button"
                 onClick={sortTasks}
             >
                 Sortuj zadania

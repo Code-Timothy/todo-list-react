@@ -13,6 +13,7 @@ In this app, you can:
 * mark a task as done
 * set all tasks as done
 * hide tasks that are done
+* sort tasks 
 
 New features coming soon!
 

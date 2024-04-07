@@ -23,12 +23,14 @@ const Tasks = ({ tasks, hideDone, removeTask, toggleDoneTask, toggleIsEdit, upda
                 >
                     {task.content}
                 </span>
-                <button
-                    className="tasksList__button tasksList__button--edit"
-                    onClick={() => toggleIsEdit(task.id)}
-                >
-                    🖊
-                </button>
+                {!task.isEdited && (
+                    <button
+                        className="tasksList__button tasksList__button--edit"
+                        onClick={() => toggleIsEdit(task.id)}
+                    >
+                        🖊
+                    </button>
+                )}
                 <button
                     className="tasksList__button tasksList__button--remove"
                     onClick={() => removeTask(task.id)}

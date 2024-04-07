@@ -15,6 +15,7 @@ In this app, you can:
 * hide tasks that are done
 * sort tasks 
 
+Every change in the app is saved to local storage.  
 New features coming soon!
 
 ## 👓 Preview

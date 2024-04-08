@@ -15,11 +15,14 @@ function App() {
       ? JSON.parse(getHideDoneFromLocalStorage)
       : false
   );
-  
+
   const [tasks, setTasks] = useState(
     getTasksFromLocalStorage
       ? JSON.parse(getTasksFromLocalStorage)
-      : []
+      : [
+        { id: 1, content: "learn some new English words!", done: false, isEdited: false, },
+        { id: 2, content: "watch a new movie", done: true, isEdited: false, },
+      ]
   );
 
   useEffect(() => {

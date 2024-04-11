@@ -22,7 +22,6 @@ function App() {
       : [
         { id: 1, content: "learn some new English words!", done: false, isEdited: false, },
         { id: 2, content: "watch a new movie", done: true, isEdited: false, },
-        { id: 3, content: "test task", done: true, isEdited: false, },
       ]
   );
 

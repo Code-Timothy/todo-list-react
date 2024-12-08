@@ -2,6 +2,7 @@ import "./index.css";
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Buttons from "./Buttons";
+import Section from "./Section";
 
 const tasks = [
   { id: 1, content: "testowe zadanie 1", done: false },
@@ -16,23 +17,15 @@ function App() {
       <header className="header">
         <h1>Lista zadań</h1>
       </header>
-      <section className="section">
-        <header className="section__header">
-          <h2 className="section__title">Dodaj nowe zadanie</h2>
-        </header>
-        <div className="section__content">
-          <Form />
-        </div>
-      </section>
-      <section className="section">
-        <header className="section__header">
-          <h2 className="section__title">Lista zadań</h2>
-          <Buttons tasks={tasks} hideDoneTasks={hideDoneTasks} />
-        </header>
-        <div className="section__content">
-          <Tasks tasks={tasks} hideDoneTasks={hideDoneTasks} />
-        </div>
-      </section>
+      <Section
+        title="Dodaj nowe zadanie"
+        body={<Form />}
+      />
+      <Section
+        title="Lista zadań"
+        extraHeaderContent={<Buttons tasks={tasks} hideDoneTasks={hideDoneTasks} />}
+        body={<Tasks tasks={tasks} hideDoneTasks={hideDoneTasks} />}
+      />
     </main>
   );
 }

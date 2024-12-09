@@ -12,7 +12,6 @@
 }
 
 .form__button {
-    font-family: inherit;
     padding: 10px;
     background-color: teal;
     color: white;
@@ -27,7 +26,6 @@
 }
 
 .form__input {
-    font-family: inherit;
     border: 1px solid #ddd;
     padding: 10px;
 }

@@ -60,6 +60,10 @@ function App() {
     setTasks(tasks => tasks.map(task => ({ ...task, done: true })));
   };
 
+  const sortTasks = () => {
+    setTasks(tasks => [...tasks].sort((a, b) => a.content.localeCompare(b.content)));
+  };
+
   const addNewTask = (newTaskContent) => {
     setTasks(tasks => ([
       ...tasks,
@@ -81,7 +85,13 @@ function App() {
       <Section
         title="Lista zadań"
         extraHeaderContent={
-          <Buttons tasks={tasks} hideDone={hideDone} toggleHideDone={toggleHideDone} setAllDone={setAllDone} />
+          <Buttons
+            tasks={tasks}
+            hideDone={hideDone}
+            toggleHideDone={toggleHideDone}
+            setAllDone={setAllDone}
+            sortTasks={sortTasks}
+          />
         }
         body={
           <Tasks

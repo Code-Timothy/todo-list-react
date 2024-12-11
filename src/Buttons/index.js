@@ -1,8 +1,14 @@
 import "./style.css";
 
-const Buttons = ({ tasks, hideDone, toggleHideDone, setAllDone }) => (
+const Buttons = ({ tasks, hideDone, toggleHideDone, setAllDone, sortTasks }) => (
     tasks.length > 0 &&
     <div className="buttons">
+        <button
+            className="buttons__button"
+            onClick={sortTasks}
+        >
+            Sortuj alfabetycznie
+        </button>
         <button
             className="buttons__button"
             onClick={toggleHideDone}

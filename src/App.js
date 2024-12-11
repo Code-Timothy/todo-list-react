@@ -43,6 +43,10 @@ function App() {
   };
 
   const saveEditedTask = (id, newContent) => {
+    if (!newContent.trim()) {
+      return;
+    }
+
     setTasks(tasks => tasks.map((task) => {
       if (task.id === id) {
         return { ...task, content: newContent, isEdit: false };

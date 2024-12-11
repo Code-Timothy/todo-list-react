@@ -5,7 +5,7 @@
 
 .tasksList__item {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr auto auto;
     align-items: center;
     gap: 10px;
     padding: 10px;
@@ -35,6 +35,10 @@
 
 .tasksList__button--remove {
     background-color: red;
+}
+
+.tasksList__button--edit {
+    background-color: rgb(255, 196, 0);
 }
 
 .tasksList__item--done {

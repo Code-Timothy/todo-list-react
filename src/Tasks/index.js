@@ -28,19 +28,19 @@ const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone, editTask, saveEdit
 
                 {task.isEdit && (
                     <button
-                        className="tasksList__button tasksList__button--remove"
+                        className="tasksList__button tasksList__button--edit"
                         onClick={({ target }) => saveEditedTask(task.id, target.value)}
                     >
-                        ZAPISZ
+                        ✔
                     </button>
                 )}
 
                 {!task.isEdit && (
                     <button
-                        className="tasksList__button tasksList__button--remove"
+                        className="tasksList__button tasksList__button--edit"
                         onClick={() => editTask(task.id)}
                     >
-                        E
+                        🖊
                     </button>
                 )}
 

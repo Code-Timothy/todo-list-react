@@ -33,7 +33,7 @@ New features coming soon!
 
 ## 👓 Preview
 
-![gif how to use the app](./src/images/howtousetdl.gif)
+![gif how to use the app](/howtouse4.gif)
 
 ## 👩🏻‍💻 Technologies:
 * HTML

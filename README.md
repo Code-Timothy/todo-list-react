@@ -14,7 +14,9 @@ In this app, you can:
 * set all tasks as done
 * hide tasks that are done
 * sort tasks alphabetically
- 
+
+All changes are saved to local storage.
+
 New features coming soon!
 
 ## How to use 👨🏼‍🏫

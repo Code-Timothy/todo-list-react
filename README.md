@@ -40,6 +40,7 @@ New features coming soon!
 * CSS (grid, flex, media-queries)
 * REACT and (react hooks and custom hooks)
 * JavaScript ES6 + features
+* Styled-components
 * Markdown
 * Create React App
 

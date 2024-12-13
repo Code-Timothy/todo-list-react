@@ -1,29 +1,25 @@
-import "./style.css";
+import { StyledButtons, Button } from "./styled";
 
 const Buttons = ({ tasks, hideDone, toggleHideDone, setAllDone, sortTasks }) => (
     tasks.length > 0 &&
-    <div className="buttons">
-        <button
-            className="buttons__button"
+    <StyledButtons>
+        <Button
             onClick={sortTasks}
         >
             Sortuj alfabetycznie
-        </button>
-        <button
-            className="buttons__button"
+        </Button>
+        <Button
             onClick={toggleHideDone}
         >
             {hideDone ? "Pokaż" : "Ukryj"} ukończone
-        </button>
-        <button
-            className="buttons__button"
+        </Button>
+        <Button
             onClick={setAllDone}
             disabled={tasks.every(({ done }) => done)}
         >
             Ukończ wszystkie
-        </button>
-    </div>
+        </Button>
+    </StyledButtons>
 );
-
 
 export default Buttons;

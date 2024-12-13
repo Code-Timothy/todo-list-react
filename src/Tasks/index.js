@@ -1,58 +1,57 @@
-import "./style.css";
+import { List, Item, Button, Content } from "./styled";
 
 const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone, editTask, saveEditedTask }) => (
-    <ul className="tasksList">
-        {tasks.map((task) => (
-            <li
-                key={task.id}
-                className={`tasksList__item ${task.done && hideDone ? "tasksList__item--hidden" : ""}`}
-            >
-                <button
-                    className="tasksList__button"
-                    onClick={() => toggleTaskDone(task.id)}
-                >
-                    {task.done ? "✔" : ""}
-                </button>
+  <List>
+    {tasks.map((task) => (
+      <Item
+        key={task.id}
+        hidden={task.done && hideDone}
+      >
+        <Button
+          onClick={() => toggleTaskDone(task.id)}
+        >
+          {task.done ? "✔" : ""}
+        </Button>
 
-                {task.isEdit ? (
-                    <input
-                        type="text"
-                        defaultValue={task.content}
-                        onBlur={({ target }) => saveEditedTask(task.id, target.value)}
-                    />
-                ) : (
-                    <span className={task.done ? "tasksList__item--done" : ""}>
-                        {task.content}
-                    </span>
-                )}
+        {task.isEdit ? (
+          <input
+            type="text"
+            defaultValue={task.content}
+            onBlur={({ target }) => saveEditedTask(task.id, target.value)}
+          />
+        ) : (
+          <Content done={task.done}>
+            {task.content}
+          </Content>
+        )}
 
-                {task.isEdit && (
-                    <button
-                        className="tasksList__button tasksList__button--edit"
-                        onClick={({ target }) => saveEditedTask(task.id, target.value)}
-                    >
-                        ✔
-                    </button>
-                )}
+        {task.isEdit && (
+          <Button
+            onClick={({ target }) => saveEditedTask(task.id, target.value)}
+            edit
+          >
+            ✔
+          </Button>
+        )}
 
-                {!task.isEdit && (
-                    <button
-                        className="tasksList__button tasksList__button--edit"
-                        onClick={() => editTask(task.id)}
-                    >
-                        🖊
-                    </button>
-                )}
+        {!task.isEdit && (
+          <Button
+            onClick={() => editTask(task.id)}
+            edit
+          >
+            🖊
+          </Button>
+        )}
 
-                <button
-                    className="tasksList__button tasksList__button--remove"
-                    onClick={() => removeTask(task.id)}
-                >
-                    🗑
-                </button>
-            </li>
-        ))}
-    </ul>
+        <Button
+          onClick={() => removeTask(task.id)}
+          remove
+        >
+          🗑
+        </Button>
+      </Item>
+    ))}
+  </List>
 );
 
 export default Tasks;

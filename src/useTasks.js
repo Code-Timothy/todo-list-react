@@ -50,10 +50,12 @@ export const useTasks = () => {
     };
 
     const addNewTask = (newTaskContent) => {
+        const greatestId = tasks.length > 0 ? Math.max(...tasks.map((task) => task.id)) : 0;
+
         setTasks(tasks => ([
             ...tasks,
             {
-                id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1,
+                id: greatestId + 1,
                 content: newTaskContent,
                 done: false,
             },

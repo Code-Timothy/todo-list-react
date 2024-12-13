@@ -1,87 +1,29 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Buttons from "./Buttons";
 import Section from "./Section";
 import Container from "./Container";
 import Header from "./Header";
-
-const getInitialTasks = () => {
-  const tasksFromLocalStorage = localStorage.getItem("tasks");
-
-  return tasksFromLocalStorage
-    ? JSON.parse(tasksFromLocalStorage)
-    : []
-};
+import { useTasks } from "./useTasks";
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
-  const [tasks, setTasks] = useState(getInitialTasks);
-
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  }, [tasks]);
 
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone);
   };
 
-  const removeTask = (id) => {
-    setTasks(tasks => tasks.filter(task => task.id !== id));
-  };
-
-  const toggleTaskDone = (id) => {
-    setTasks(tasks => tasks.map(task => {
-      if (task.id === id) {
-        return { ...task, done: !task.done };
-      }
-
-      return task;
-    }));
-  };
-
-  const editTask = (id) => {
-    setTasks(tasks => tasks.map(task => {
-      if (task.id === id) {
-        return { ...task, isEdit: !task.isEdit }
-      }
-
-      return task;
-    }));
-  };
-
-  const saveEditedTask = (id, newContent) => {
-    if (!newContent.trim()) {
-      return;
-    }
-
-    setTasks(tasks => tasks.map((task) => {
-      if (task.id === id) {
-        return { ...task, content: newContent, isEdit: false };
-      }
-
-      return task;
-    }));
-  };
-
-  const setAllDone = () => {
-    setTasks(tasks => tasks.map(task => ({ ...task, done: true })));
-  };
-
-  const sortTasks = () => {
-    setTasks(tasks => [...tasks].sort((a, b) => a.content.localeCompare(b.content)));
-  };
-
-  const addNewTask = (newTaskContent) => {
-    setTasks(tasks => ([
-      ...tasks,
-      {
-        id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1,
-        content: newTaskContent,
-        done: false,
-      },
-    ]));
-  };
+  const {
+    tasks,
+    removeTask,
+    toggleTaskDone,
+    editTask,
+    saveEditedTask,
+    setAllDone,
+    sortTasks,
+    addNewTask,
+  } = useTasks();
 
   return (
     <Container>

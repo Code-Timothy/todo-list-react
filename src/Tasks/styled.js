@@ -11,7 +11,7 @@ export const Item = styled.li`
     align-items: center;
     gap: 10px;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.alto};
     word-break: break-word;
 
     ${({ hidden }) => hidden && css`
@@ -30,17 +30,17 @@ export const Button = styled.button`
     height: 30px;
     border: none;
     font-size: 16px;
-    background-color: green;
-    color: white;
+    background-color: ${({ theme }) => theme.colors.green};
+    color: ${({ theme }) => theme.colors.white};
     padding: 5px;
     transition: 1s;
 
     ${({ remove }) => remove && css`
-        background-color: red;
+        background-color: ${({ theme }) => theme.colors.red};
     `}
 
     ${({ edit }) => edit && css`
-        background-color: rgb(255, 196, 0); 
+        background-color: ${({ theme }) => theme.colors.amber}; 
     `}
 
     &:hover{

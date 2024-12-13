@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./index.css";
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Buttons from "./Buttons";

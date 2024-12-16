@@ -20,7 +20,7 @@ const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone, editTask, saveEdit
             onBlur={({ target }) => saveEditedTask(task.id, target.value)}
           />
         ) : (
-          <Content done={task.done}>
+          <Content $done={task.done}>
             {task.content}
           </Content>
         )}
@@ -28,7 +28,7 @@ const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone, editTask, saveEdit
         {task.isEdit && (
           <Button
             onClick={({ target }) => saveEditedTask(task.id, target.value)}
-            edit
+            $edit
           >
             ✔
           </Button>
@@ -37,7 +37,7 @@ const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone, editTask, saveEdit
         {!task.isEdit && (
           <Button
             onClick={() => editTask(task.id)}
-            edit
+            $edit
           >
             🖊
           </Button>
@@ -45,7 +45,7 @@ const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone, editTask, saveEdit
 
         <Button
           onClick={() => removeTask(task.id)}
-          remove
+          $remove
         >
           🗑
         </Button>

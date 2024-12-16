@@ -10,6 +10,7 @@ export const theme = {
         gray: "#808080",
     },
     breakpoints: {
+        smallMobile: 410,
         mobile: 767,
     },
 };

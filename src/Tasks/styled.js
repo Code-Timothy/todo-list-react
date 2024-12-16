@@ -25,6 +25,12 @@ export const Content = styled.span`
     `}
 `;
 
+export const Input = styled.input`
+    @media (max-width: ${({ theme }) => theme.breakpoints.smallMobile}px){
+        width: 160px;
+    }
+`;
+
 export const Button = styled.button`
     width: 30px;
     height: 30px;

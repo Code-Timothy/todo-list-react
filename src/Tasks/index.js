@@ -1,4 +1,4 @@
-import { List, Item, Button, Content } from "./styled";
+import { List, Item, Button, Content, Input } from "./styled";
 
 const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone, editTask, saveEditedTask }) => (
   <List>
@@ -14,7 +14,7 @@ const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone, editTask, saveEdit
         </Button>
 
         {task.isEdit ? (
-          <input
+          <Input
             type="text"
             defaultValue={task.content}
             onBlur={({ target }) => saveEditedTask(task.id, target.value)}

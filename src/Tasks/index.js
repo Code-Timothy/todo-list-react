@@ -25,20 +25,23 @@ const Tasks = ({ tasks, hideDone, removeTask, toggleTaskDone, editTask, saveEdit
           </Content>
         )}
 
-        {task.isEdit
-          ? <Button
+        {task.isEdit && (
+          <Button
             onClick={({ target }) => saveEditedTask(task.id, target.value)}
             edit
           >
             ✔
           </Button>
-          : <Button
+        )}
+
+        {!task.isEdit && (
+          <Button
             onClick={() => editTask(task.id)}
             edit
           >
             🖊
           </Button>
-        }
+        )}
 
         <Button
           onClick={() => removeTask(task.id)}

@@ -37,7 +37,6 @@ function Tasks() {
         }
         body={
           <TaskList
-            tasks={tasks}
             removeTask={removeTask}
             toggleTaskDone={toggleTaskDone}
             editTask={editTask}

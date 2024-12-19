@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-import { selectTasks } from "./tasksSlice";
 import Form from "./Form";
 import TaskList from "./TaskList";
 import Buttons from "./Buttons";
@@ -9,8 +7,6 @@ import Header from "../../common/Header";
 import { useTasks } from "../../useTasks";
 
 function Tasks() {
-  const { tasks } = useSelector(selectTasks);
-
   const {
     removeTask,
     toggleTaskDone,

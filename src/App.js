@@ -1,4 +1,4 @@
-import Tasks from "./features/tasks/Tasks";
+import Tasks from "./features/tasks/index";
 
 const App = () => <Tasks />
 

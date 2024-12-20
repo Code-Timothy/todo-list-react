@@ -10,7 +10,6 @@ function Tasks() {
   const {
     editTask,
     saveEditedTask,
-    setAllDone,
     sortTasks,
   } = useTasks();
 
@@ -25,7 +24,6 @@ function Tasks() {
         title="Lista zadań"
         extraHeaderContent={
           <Buttons
-            setAllDone={setAllDone}
             sortTasks={sortTasks}
           />
         }

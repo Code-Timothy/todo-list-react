@@ -8,7 +8,6 @@ import { useTasks } from "../../useTasks";
 
 function Tasks() {
   const {
-    editTask,
     saveEditedTask,
     sortTasks,
   } = useTasks();
@@ -29,7 +28,6 @@ function Tasks() {
         }
         body={
           <TaskList
-            editTask={editTask}
             saveEditedTask={saveEditedTask}
           />
         }

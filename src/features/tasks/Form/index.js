@@ -17,6 +17,7 @@ const Form = () => {
             dispatch(addTask({
                 content: newTaskContentTrimmed,
                 done: false,
+                isEdited: false,
                 id: nanoid(),
             }));
             setNewTaskContent("");

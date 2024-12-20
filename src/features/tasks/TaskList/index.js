@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
-import { selectTasks, toggleTaskDone, removeTask } from "../tasksSlice";
+import { selectTasks, toggleTaskDone, removeTask, editTask } from "../tasksSlice";
 import { List, Item, Button, Content, Input } from "./styled";
 
-const TaskList = ({ editTask, saveEditedTask }) => {
+const TaskList = ({ saveEditedTask }) => {
   const { tasks, hideDone } = useSelector(selectTasks);
   const dispatch = useDispatch();
 
@@ -42,7 +42,7 @@ const TaskList = ({ editTask, saveEditedTask }) => {
 
           {!task.isEdit && (
             <Button
-              onClick={() => editTask(task.id)}
+              onClick={() => dispatch(editTask(task.id))}
               $edit
             >
               🖊

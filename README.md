@@ -15,8 +15,6 @@ In this app, you can:
 * hide tasks that are done
 * sort tasks alphabetically
 
-All changes are saved to local storage.
-
 New features coming soon!
 
 ## How to use 👨🏼‍🏫
@@ -39,6 +37,7 @@ New features coming soon!
 * HTML
 * CSS (grid, flex, media-queries)
 * REACT and (react hooks and custom hooks)
+* Redux / Redux Toolkit / Immer
 * JavaScript ES6 + features
 * Styled-components
 * Markdown

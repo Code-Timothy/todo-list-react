@@ -25,14 +25,14 @@ const tasksSlice = createSlice({
             tasks.forEach((task) => task.done = true);
         },
         editTask: ({ tasks }, { payload }) => {
-            const index = tasks.findIndex(task => task.id === payload);
+            const index = tasks.findIndex(({ id }) => id === payload);
             tasks[index].isEdit = !tasks[index].isEdit;
         },
-        saveEditedTask: (state, action) => {
+        saveEditedTask: ({ tasks }, action) => {
             const { id, newContent } = action.payload;
-            const index = state.tasks.findIndex(task => task.id === id);
-            state.tasks[index].content = newContent;
-            state.tasks[index].isEdit = false;
+            const index = tasks.findIndex((task) => task.id === id);
+            tasks[index].content = newContent;
+            tasks[index].isEdit = false;
         },
         sortTasks: ({ tasks }) => {
             tasks.sort((a, b) => a.content.localeCompare(b.content));

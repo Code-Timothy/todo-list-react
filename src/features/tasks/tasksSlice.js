@@ -34,9 +34,12 @@ const tasksSlice = createSlice({
             state.tasks[index].content = newContent;
             state.tasks[index].isEdit = false;
         },
+        sortTasks: ({ tasks }) => {
+            tasks.sort((a, b) => a.content.localeCompare(b.content));
+        },
     },
 });
 
-export const { addTask, toggleHideDone, toggleTaskDone, removeTask, setAllDone, editTask, saveEditedTask } = tasksSlice.actions;
+export const { addTask, toggleHideDone, toggleTaskDone, removeTask, setAllDone, editTask, saveEditedTask, sortTasks } = tasksSlice.actions;
 export const selectTasks = state => state.tasks;
 export const tasksReducer = tasksSlice.reducer;

@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
-import { selectTasks, toggleHideDone, setAllDone } from "../tasksSlice";
+import { selectTasks, toggleHideDone, setAllDone, sortTasks } from "../tasksSlice";
 import { StyledButtons, Button } from "./styled";
 
-const Buttons = ({ sortTasks }) => {
+const Buttons = () => {
     const { tasks, hideDone } = useSelector(selectTasks);
     const dispatch = useDispatch();
 
@@ -10,7 +10,7 @@ const Buttons = ({ sortTasks }) => {
         tasks.length > 0 &&
         <StyledButtons>
             <Button
-                onClick={sortTasks}
+                onClick={() => dispatch(sortTasks())}
             >
                 Sortuj alfabetycznie
             </Button>

@@ -4,13 +4,8 @@ import Buttons from "./Buttons";
 import Section from "../../common/Section";
 import Container from "../../common/Container";
 import Header from "../../common/Header";
-import { useTasks } from "../../useTasks";
 
 function Tasks() {
-  const {
-    sortTasks,
-  } = useTasks();
-
   return (
     <Container>
       <Header title="Lista zadań" />
@@ -22,7 +17,6 @@ function Tasks() {
         title="Lista zadań"
         extraHeaderContent={
           <Buttons
-            sortTasks={sortTasks}
           />
         }
         body={

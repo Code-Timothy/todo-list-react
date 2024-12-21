@@ -26,11 +26,17 @@ const tasksSlice = createSlice({
         },
         editTask: ({ tasks }, { payload }) => {
             const index = tasks.findIndex(task => task.id === payload);
-            tasks[index].isEdited = !tasks[index].isEdited;
+            tasks[index].isEdit = !tasks[index].isEdit;
+        },
+        saveEditedTask: (state, action) => {
+            const { id, newContent } = action.payload;
+            const index = state.tasks.findIndex(task => task.id === id);
+            state.tasks[index].content = newContent;
+            state.tasks[index].isEdit = false;
         },
     },
 });
 
-export const { addTask, toggleHideDone, toggleTaskDone, removeTask, setAllDone, editTask } = tasksSlice.actions;
+export const { addTask, toggleHideDone, toggleTaskDone, removeTask, setAllDone, editTask, saveEditedTask } = tasksSlice.actions;
 export const selectTasks = state => state.tasks;
 export const tasksReducer = tasksSlice.reducer;

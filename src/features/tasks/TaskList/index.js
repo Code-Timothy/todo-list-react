@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectTasks, toggleTaskDone, removeTask, editTask } from "../tasksSlice";
+import { selectTasks, toggleTaskDone, removeTask, editTask, saveEditedTask } from "../tasksSlice";
 import { List, Item, Button, Content, Input } from "./styled";
 
-const TaskList = ({ saveEditedTask }) => {
+const TaskList = () => {
   const { tasks, hideDone } = useSelector(selectTasks);
+  const [editedContent, setEditedContent] = useState("");
   const dispatch = useDispatch();
 
   return (
@@ -22,8 +24,9 @@ const TaskList = ({ saveEditedTask }) => {
           {task.isEdit ? (
             <Input
               type="text"
-              defaultValue={task.content}
-              onBlur={({ target }) => saveEditedTask(task.id, target.value)}
+              value={editedContent}
+              onChange={({ target }) => setEditedContent(target.value)}
+              onBlur={() => dispatch(saveEditedTask({ id: task.id, newContent: editedContent }))}
             />
           ) : (
             <Content $done={task.done}>
@@ -33,7 +36,7 @@ const TaskList = ({ saveEditedTask }) => {
 
           {task.isEdit && (
             <Button
-              onClick={({ target }) => saveEditedTask(task.id, target.value)}
+              onClick={() => dispatch(saveEditedTask({ id: task.id, newContent: editedContent }))}
               $edit
             >
               ✔

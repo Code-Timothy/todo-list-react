@@ -40,7 +40,7 @@ const Form = () => {
             />
             <Button>Dodaj zadanie</Button>
         </StyledForm>
-    )
+    );
 };
 
 export default Form;

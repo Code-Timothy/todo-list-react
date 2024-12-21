@@ -26,7 +26,7 @@ const Buttons = () => {
                 Ukończ wszystkie
             </Button>
         </StyledButtons>
-    )
+    );
 };
 
 export default Buttons;

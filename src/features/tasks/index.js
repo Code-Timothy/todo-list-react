@@ -15,14 +15,8 @@ function Tasks() {
       />
       <Section
         title="Lista zadań"
-        extraHeaderContent={
-          <Buttons
-          />
-        }
-        body={
-          <TaskList
-          />
-        }
+        extraHeaderContent={<Buttons />}
+        body={<TaskList />}
       />
     </Container>
   );

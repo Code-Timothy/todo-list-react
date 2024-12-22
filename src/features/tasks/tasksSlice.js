@@ -29,9 +29,8 @@ const tasksSlice = createSlice({
             const index = tasks.findIndex(({ id }) => id === taskId);
             tasks[index].isEdit = true;
         },
-        saveEditedTask: ({ tasks }, action) => {
-            const { id, newContent } = action.payload;
-            const index = tasks.findIndex((task) => task.id === id);
+        saveEditedTask: ({ tasks }, { payload: { taskId, newContent } }) => {
+            const index = tasks.findIndex(({ id }) => id === taskId);
             tasks[index].content = newContent;
             tasks[index].isEdit = false;
         },

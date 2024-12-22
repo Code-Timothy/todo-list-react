@@ -55,5 +55,6 @@ export const selectTasksState = state => state.tasks;
 
 export const selectHideDone = state => selectTasksState(state).hideDone;
 export const selectTasks = state => selectTasksState(state).tasks;
+export const selectAreTasksEmpty = state => selectTasks(state).length === 0;
 
 export const tasksReducer = tasksSlice.reducer;

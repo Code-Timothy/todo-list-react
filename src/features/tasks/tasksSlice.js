@@ -41,5 +41,7 @@ const tasksSlice = createSlice({
 });
 
 export const { addTask, toggleHideDone, toggleTaskDone, removeTask, setAllDone, editTask, saveEditedTask, sortTasks } = tasksSlice.actions;
-export const selectTasks = state => state.tasks;
+export const selectTasksState = state => state.tasks;
+export const selectHideDone = state => selectTasksState(state).hideDone;
+export const selectTasks = state => selectTasksState(state).tasks;
 export const tasksReducer = tasksSlice.reducer;

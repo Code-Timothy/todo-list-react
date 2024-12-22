@@ -25,8 +25,9 @@ const tasksSlice = createSlice({
             tasks.forEach((task) => task.done = true);
         },
         editTask: ({ tasks }, { payload }) => {
+            tasks.forEach(task => task.isEdit = false);
             const index = tasks.findIndex(({ id }) => id === payload);
-            tasks[index].isEdit = !tasks[index].isEdit;
+            tasks[index].isEdit = true;
         },
         saveEditedTask: ({ tasks }, action) => {
             const { id, newContent } = action.payload;
@@ -57,5 +58,6 @@ export const selectHideDone = state => selectTasksState(state).hideDone;
 export const selectTasks = state => selectTasksState(state).tasks;
 export const selectAreTasksEmpty = state => selectTasks(state).length === 0;
 export const selectIsEveryTaskDone = state => selectTasks(state).every(({ done }) => done);
+export const selectTaskIsEdit = state => selectTasks(state).find(({ isEdit }) => isEdit);
 
 export const tasksReducer = tasksSlice.reducer;

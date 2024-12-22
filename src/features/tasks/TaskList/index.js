@@ -1,20 +1,20 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectTasks, toggleTaskDone, removeTask, editTask, saveEditedTask, selectHideDone } from "../tasksSlice";
+import { selectTasks, selectHideDone, selectTaskIsEdit, toggleTaskDone, removeTask, editTask, saveEditedTask } from "../tasksSlice";
 import { List, Item, Button, Content, Input } from "./styled";
 
 const TaskList = () => {
   const tasks = useSelector(selectTasks);
   const hideDone = useSelector(selectHideDone);
+  const taskIsEdit = useSelector(selectTaskIsEdit);
   const [editedContent, setEditedContent] = useState("");
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const taskIsEdited = tasks.find(({ isEdit }) => isEdit === true);
-    if (taskIsEdited) {
-      setEditedContent(taskIsEdited.content);
+    if (taskIsEdit) {
+      setEditedContent(taskIsEdit.content);
     }
-  }, [tasks]);
+  }, [taskIsEdit]);
 
   return (
     <List>
@@ -29,7 +29,7 @@ const TaskList = () => {
             {task.done ? "✔" : ""}
           </Button>
 
-          {task.isEdit ? (
+          {taskIsEdit && taskIsEdit.id === task.id ? (
             <Input
               type="text"
               value={editedContent}
@@ -42,7 +42,7 @@ const TaskList = () => {
             </Content>
           )}
 
-          {task.isEdit && (
+          {(taskIsEdit && taskIsEdit.id === task.id) && (
             <Button
               onClick={() => dispatch(saveEditedTask({ id: task.id, newContent: editedContent }))}
               $edit
@@ -51,7 +51,7 @@ const TaskList = () => {
             </Button>
           )}
 
-          {!task.isEdit && (
+          {!(taskIsEdit && taskIsEdit.id === task.id) && (
             <Button
               onClick={() => dispatch(editTask(task.id))}
               $edit

@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { createSagaMiddleware } from "redux-saga";
+import createSagaMiddleware from "redux-saga";
 import { tasksReducer } from "./features/tasks/tasksSlice";
 import { watchFetchExampleTasks } from "./features/tasks/tasksSaga";
 
 const sagaMiddleware = createSagaMiddleware();
 
-export default configureStore({
+const store = configureStore({
     reducer: {
         tasks: tasksReducer,
     },
@@ -14,3 +14,5 @@ export default configureStore({
 });
 
 sagaMiddleware.run(watchFetchExampleTasks);
+
+export default store;

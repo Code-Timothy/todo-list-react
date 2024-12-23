@@ -37,6 +37,10 @@ const tasksSlice = createSlice({
         sortTasks: ({ tasks }) => {
             tasks.sort((a, b) => a.content.localeCompare(b.content));
         },
+        fetchExampleTasks: () => { },
+        setTasks: (state, { payload: tasks }) => {
+            state.tasks = tasks;
+        },
     },
 });
 
@@ -49,6 +53,8 @@ export const {
     editTask,
     saveEditedTask,
     sortTasks,
+    fetchExampleTasks,
+    setTasks,
 } = tasksSlice.actions;
 
 export const selectTasksState = state => state.tasks;

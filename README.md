@@ -38,6 +38,7 @@ New features coming soon!
 * CSS (grid, flex, media-queries)
 * REACT and (react hooks and custom hooks)
 * Redux / Redux Toolkit / Immer
+* Redux Saga
 * JavaScript ES6 + features
 * Styled-components
 * Markdown

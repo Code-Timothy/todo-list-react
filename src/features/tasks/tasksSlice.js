@@ -25,7 +25,7 @@ const tasksSlice = createSlice({
         setAllDone: ({ tasks }) => {
             tasks.forEach((task) => task.done = true);
         },
-        editTask: ({ tasks }, { payload: taskId }) => {
+        startEditTask: ({ tasks }, { payload: taskId }) => {
             tasks.forEach(task => task.isEdit = false);
             const index = tasks.findIndex(({ id }) => id === taskId);
             tasks[index].isEdit = true;
@@ -51,7 +51,7 @@ export const {
     toggleTaskDone,
     removeTask,
     setAllDone,
-    editTask,
+    startEditTask,
     saveEditedTask,
     sortTasks,
     fetchExampleTasks,

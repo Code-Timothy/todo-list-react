@@ -7,7 +7,7 @@ import {
   selectTaskIsEdit,
   toggleTaskDone,
   removeTask,
-  editTask,
+  startEditTask,
   saveEditedTask,
 } from "../tasksSlice";
 
@@ -61,7 +61,7 @@ const TaskList = () => {
 
           {!(taskIsEdit && taskIsEdit.id === task.id) && (
             <Button
-              onClick={() => dispatch(editTask(task.id))}
+              onClick={() => dispatch(startEditTask(task.id))}
               $edit
             >
               🖊

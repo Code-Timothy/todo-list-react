@@ -15,6 +15,7 @@ In this app, you can:
 * hide tasks that are done
 * sort tasks alphabetically
 
+All changes in the app are saved to local storage using Redux-Saga.
 New features coming soon!
 
 ## How to use 👨🏼‍🏫

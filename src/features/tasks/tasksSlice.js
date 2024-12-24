@@ -30,7 +30,7 @@ const tasksSlice = createSlice({
             const index = tasks.findIndex(({ id }) => id === taskId);
             tasks[index].isEdit = true;
         },
-        saveEditedTask: ({ tasks }, { payload: { taskId, newContent } }) => {
+        finishEditTask: ({ tasks }, { payload: { taskId, newContent } }) => {
             const index = tasks.findIndex(({ id }) => id === taskId);
             tasks[index].content = newContent;
             tasks[index].isEdit = false;
@@ -52,7 +52,7 @@ export const {
     removeTask,
     setAllDone,
     startEditTask,
-    saveEditedTask,
+    finishEditTask,
     sortTasks,
     fetchExampleTasks,
     setTasks,

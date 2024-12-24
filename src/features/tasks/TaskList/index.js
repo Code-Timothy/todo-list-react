@@ -8,7 +8,7 @@ import {
   toggleTaskDone,
   removeTask,
   startEditTask,
-  saveEditedTask,
+  finishEditTask,
 } from "../tasksSlice";
 
 const TaskList = () => {
@@ -42,7 +42,7 @@ const TaskList = () => {
               type="text"
               value={editedContent}
               onChange={({ target }) => setEditedContent(target.value)}
-              onBlur={() => dispatch(saveEditedTask({ taskId: task.id, newContent: editedContent }))}
+              onBlur={() => dispatch(finishEditTask({ taskId: task.id, newContent: editedContent }))}
             />
           ) : (
             <Content $done={task.done}>
@@ -52,7 +52,7 @@ const TaskList = () => {
 
           {(taskIsEdit && taskIsEdit.id === task.id) && (
             <Button
-              onClick={() => dispatch(saveEditedTask({ taskId: task.id, newContent: editedContent }))}
+              onClick={() => dispatch(finishEditTask({ taskId: task.id, newContent: editedContent }))}
               $edit
             >
               ✔

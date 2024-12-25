@@ -39,7 +39,9 @@ const tasksSlice = createSlice({
         sortTasks: ({ tasks }) => {
             tasks.sort((a, b) => a.content.localeCompare(b.content));
         },
-        fetchExampleTasks: () => { },
+        fetchExampleTasksRequest: (state) => {
+            state.loading = true;
+        },
         setTasks: (state, { payload: tasks }) => {
             state.tasks = tasks;
         },
@@ -55,7 +57,7 @@ export const {
     startEditTask,
     finishEditTask,
     sortTasks,
-    fetchExampleTasks,
+    fetchExampleTasksRequest,
     setTasks,
 } = tasksSlice.actions;
 

@@ -7,7 +7,7 @@ import {
     toggleHideDone,
     setAllDone,
     sortTasks,
-    fetchExampleTasks,
+    fetchExampleTasksRequest,
 } from "../tasksSlice";
 
 const Buttons = ({ singleButton }) => {
@@ -19,7 +19,7 @@ const Buttons = ({ singleButton }) => {
     return (
         <StyledButtons>
             {singleButton ? (
-                <Button onClick={() => dispatch(fetchExampleTasks())}>
+                <Button onClick={() => dispatch(fetchExampleTasksRequest())}>
                     Pobierz przykładowe zadania
                 </Button>
             ) : (

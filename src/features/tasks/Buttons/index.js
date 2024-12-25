@@ -21,7 +21,10 @@ const Buttons = ({ singleButton }) => {
     return (
         <StyledButtons>
             {singleButton ? (
-                <Button onClick={() => dispatch(fetchExampleTasksRequest())}>
+                <Button
+                    onClick={() => dispatch(fetchExampleTasksRequest())}
+                    disabled={loading}
+                >
                     {loading ? "Ładowanie..." : "Pobierz przykładowe zadania"}
                 </Button>
             ) : (

@@ -1,4 +1,4 @@
-import Tasks from "./features/tasks/index";
+import Tasks from "./features/tasks/TasksPage/index";
 import Author from "./features/author/index";
 import { HashRouter, Link, Switch, Route, Redirect } from "react-router-dom";
 

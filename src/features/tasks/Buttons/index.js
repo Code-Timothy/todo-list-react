@@ -8,19 +8,21 @@ import {
     setAllDone,
     sortTasks,
     fetchExampleTasksRequest,
+    selectLoading,
 } from "../tasksSlice";
 
 const Buttons = ({ singleButton }) => {
     const hideDone = useSelector(selectHideDone);
     const areTasksEmpty = useSelector(selectAreTasksEmpty);
     const isEveryTaskDone = useSelector(selectIsEveryTaskDone);
+    const loading = useSelector(selectLoading);
     const dispatch = useDispatch();
 
     return (
         <StyledButtons>
             {singleButton ? (
                 <Button onClick={() => dispatch(fetchExampleTasksRequest())}>
-                    Pobierz przykładowe zadania
+                    {loading ? "Ładowanie..." : "Pobierz przykładowe zadania"}
                 </Button>
             ) : (
                 !areTasksEmpty &&

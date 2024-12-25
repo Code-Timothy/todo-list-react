@@ -11,6 +11,7 @@ function Tasks() {
       <Header title="Lista zadań" />
       <Section
         title="Dodaj nowe zadanie"
+        extraHeaderContent={<Buttons singleButton={true} />}
         body={<Form />}
       />
       <Section

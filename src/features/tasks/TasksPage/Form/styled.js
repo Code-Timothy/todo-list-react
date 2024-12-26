@@ -24,8 +24,3 @@ export const Button = styled.button`
         cursor: pointer;
     }
 `;
-
-export const Input = styled.input`
-    border: 1px solid ${({ theme }) => theme.colors.alto};
-    padding: 10px;
-`;

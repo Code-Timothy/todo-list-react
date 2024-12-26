@@ -1,4 +1,4 @@
-import Tasks from "./features/tasks/TasksPage/index";
+import TasksPage from "./features/tasks/TasksPage/index";
 import Author from "./features/author/index";
 import { HashRouter, Link, Switch, Route, Redirect } from "react-router-dom";
 import TaskPage from "./features/tasks/TaskPage";
@@ -12,7 +12,7 @@ const App = () => (
                 <TaskPage />
             </Route>
             <Route path="/zadania">
-                <Tasks />
+                <TasksPage />
             </Route>
             <Route path="/autor">
                 <Author />

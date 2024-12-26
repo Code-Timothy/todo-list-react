@@ -6,7 +6,7 @@ import Container from "../../../common/Container";
 import Header from "../../../common/Header";
 import Search from "./Search";
 
-function Tasks() {
+function TasksPage() {
   return (
     <Container>
       <Header title="Lista zadań" />
@@ -30,4 +30,4 @@ function Tasks() {
   );
 }
 
-export default Tasks;
+export default TasksPage;

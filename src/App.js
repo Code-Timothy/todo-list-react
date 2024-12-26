@@ -22,6 +22,6 @@ const App = () => (
             </Route>
         </Switch>
     </HashRouter>
-)
+);
 
 export default App;

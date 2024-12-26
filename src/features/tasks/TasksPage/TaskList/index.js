@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import searchQueryParamName from "../searchQueryParamName";
-import { List, Item, Button, Content, Input } from "./styled";
+import { List, Item, StyledLink, Button, Content, Input } from "./styled";
 import {
   selectHideDone,
   selectTaskIsEdit,
@@ -52,7 +52,7 @@ const TaskList = () => {
             />
           ) : (
             <Content $done={task.done}>
-              <Link to={`/zadania/${task.id}`}>{task.content}</Link>
+              <StyledLink to={`/zadania/${task.id}`}>{task.content}</StyledLink>
             </Content>
           )}
 

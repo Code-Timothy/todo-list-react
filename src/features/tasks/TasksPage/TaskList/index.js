@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { List, Item, Button, Content, Input } from "./styled";
 import {
@@ -46,7 +47,7 @@ const TaskList = () => {
             />
           ) : (
             <Content $done={task.done}>
-              {task.content}
+              <Link to={`/zadania/${task.id}`}>{task.content}</Link>
             </Content>
           )}
 

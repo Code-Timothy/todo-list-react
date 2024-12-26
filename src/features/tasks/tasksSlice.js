@@ -74,4 +74,14 @@ export const selectTaskIsEdit = state => selectTasks(state).find(({ isEdit }) =>
 export const getTaskById = (state, taskId) =>
     selectTasks(state).find(({ id }) => id === taskId);
 
+export const selectTasksByQuery = (state, query) => {
+    const tasks = selectTasks(state);
+
+    if (!query || query.trim() === "") {
+        return tasks;
+    }
+
+    return tasks.filter(({ content }) => content.toUpperCase().includes(query.trim().toUpperCase()));
+};
+
 export const tasksReducer = tasksSlice.reducer;

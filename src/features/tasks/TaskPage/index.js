@@ -21,7 +21,7 @@ const TaskPage = () => {
                 }
             />
         </Container>
-    )
+    );
 };
 
 export default TaskPage;

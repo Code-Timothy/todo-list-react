@@ -1,12 +1,12 @@
 import TasksPage from "./features/tasks/TasksPage/index";
 import AuthorPage from "./features/author/index";
-import { HashRouter, Link, Switch, Route, Redirect } from "react-router-dom";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import TaskPage from "./features/tasks/TaskPage";
+import Navigation from "./common/Navigation";
 
 const App = () => (
     <HashRouter>
-        <Link to="/zadania">Zadania</Link>
-        <Link to="/autor">O autorze</Link>
+        <Navigation />
         <Switch>
             <Route path="/zadania/:id">
                 <TaskPage />

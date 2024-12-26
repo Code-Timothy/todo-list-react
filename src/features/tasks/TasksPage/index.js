@@ -4,6 +4,7 @@ import Buttons from "./Buttons";
 import Section from "../../../common/Section";
 import Container from "../../../common/Container";
 import Header from "../../../common/Header";
+import Search from "./Search";
 
 function Tasks() {
   return (
@@ -14,6 +15,12 @@ function Tasks() {
         extraHeaderContent={<Buttons singleButton={true} />}
         body={<Form />}
       />
+
+      <Section
+        title="Wyszukiwarka"
+        body={<Search />}
+      />
+
       <Section
         title="Lista zadań"
         extraHeaderContent={<Buttons />}

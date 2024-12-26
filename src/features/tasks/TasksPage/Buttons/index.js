@@ -9,7 +9,7 @@ import {
     sortTasks,
     fetchExampleTasksRequest,
     selectLoading,
-} from "../tasksSlice";
+} from "../../tasksSlice";
 
 const Buttons = ({ singleButton }) => {
     const hideDone = useSelector(selectHideDone);

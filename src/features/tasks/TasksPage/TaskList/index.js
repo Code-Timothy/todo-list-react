@@ -10,7 +10,7 @@ import {
   removeTask,
   startEditTask,
   finishEditTask,
-} from "../tasksSlice";
+} from "../../tasksSlice";
 
 const TaskList = () => {
   const tasks = useSelector(selectTasks);

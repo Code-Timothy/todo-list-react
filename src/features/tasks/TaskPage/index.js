@@ -23,7 +23,7 @@ const TaskPage = () => {
             />
             <Section
                 title="Komentarze do zadania"
-                body={<TaskComments />}
+                body={task && <TaskComments />}
             />
         </Container>
     );

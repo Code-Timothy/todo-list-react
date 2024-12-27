@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, nanoid } from "@reduxjs/toolkit";
 import { getTasksFromLocalStorage } from "./tasksLocalStorage";
 
 const tasksSlice = createSlice({
@@ -46,6 +46,13 @@ const tasksSlice = createSlice({
             state.loading = false;
             state.tasks = tasks;
         },
+        addCommentToTask: ({ tasks }, { payload: { taskId, comment } }) => {
+            const task = tasks.find(({ id }) => id === taskId);
+
+            if (task) {
+                task.comments.push({ content: comment, id: nanoid() });
+            }
+        },
     },
 });
 
@@ -60,6 +67,7 @@ export const {
     sortTasks,
     fetchExampleTasksRequest,
     fetchExampleTasksSuccess,
+    addCommentToTask,
 } = tasksSlice.actions;
 
 export const selectTasksState = state => state.tasks;

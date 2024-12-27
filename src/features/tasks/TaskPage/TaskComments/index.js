@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import { addCommentToTask, getTaskById } from "../../tasksSlice";
 import Item from "../../../../common/Item";
 import Input from "../../../../common/Input";
+import Button from "../../../../common/Button";
+import { StyledList, StyledForm, StyledButton } from "./styled";
 
 const TaskComments = () => {
     const { id } = useParams();
@@ -20,19 +22,27 @@ const TaskComments = () => {
 
     return (
         <>
-            <ul>
+            <StyledForm>
+                <Input
+                    placeholder="Dodaj komentarz..."
+                    value={comment}
+                    onChange={({ target }) => setComment(target.value)}
+                />
+                <StyledButton onClick={handleAddComment}>Dodaj komentarz</StyledButton>
+            </StyledForm>
+            <StyledList>
                 {task.comments.map(comment => (
-                    <Item key={comment.id}>
-                        {comment.content}
-                    </Item>
+                    <>
+                        <Item
+                            singleButton
+                            key={comment.id}
+                        >
+                            {comment.content}
+                            <Button $remove>🗑</Button>
+                        </Item>
+                    </>
                 ))}
-            </ul>
-            <Input
-                placeholder="Dodaj komentarz..."
-                value={comment}
-                onChange={({ target }) => setComment(target.value)}
-            />
-            <button onClick={handleAddComment}>Dodaj komentarz</button>
+            </StyledList>
         </>
     );
 };

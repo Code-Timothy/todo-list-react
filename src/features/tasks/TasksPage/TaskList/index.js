@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import searchQueryParamName from "../searchQueryParamName";
-import { List, Item, StyledLink, Button, Content, Input } from "./styled";
+import Item from "../../../../common/Item";
+import { List, StyledLink, Button, Content, Input } from "./styled";
 import {
   selectHideDone,
   selectTaskIsEdit,

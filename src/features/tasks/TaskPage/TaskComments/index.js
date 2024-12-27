@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addCommentToTask, getTaskById } from "../../tasksSlice";
+import Item from "../../../../common/Item";
+import Input from "../../../../common/Input";
 
 const TaskComments = () => {
     const { id } = useParams();
@@ -20,12 +22,12 @@ const TaskComments = () => {
         <>
             <ul>
                 {task.comments.map(comment => (
-                    <li key={comment.id}>
+                    <Item key={comment.id}>
                         {comment.content}
-                    </li>
+                    </Item>
                 ))}
             </ul>
-            <textarea
+            <Input
                 placeholder="Dodaj komentarz..."
                 value={comment}
                 onChange={({ target }) => setComment(target.value)}

@@ -20,6 +20,7 @@ const Form = () => {
                 done: false,
                 isEdit: false,
                 id: nanoid(),
+                comments: [],
             }));
             setNewTaskContent("");
             inputRef.current.focus();

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { addCommentToTask, getTaskById } from "../../tasksSlice";
+import { addCommentToTask, getTaskById, removeTaskComment } from "../../tasksSlice";
 import Item from "../../../../common/Item";
 import Input from "../../../../common/Input";
 import Button from "../../../../common/Button";
@@ -32,15 +32,18 @@ const TaskComments = () => {
             </StyledForm>
             <StyledList>
                 {task.comments.map(comment => (
-                    <>
-                        <Item
-                            singleButton
-                            key={comment.id}
+                    <Item
+                        singleButton
+                        key={comment.id}
+                    >
+                        {comment.content}
+                        <Button
+                            $remove
+                            onClick={() => dispatch(removeTaskComment({ taskId: id, commentId: comment.id }))}
                         >
-                            {comment.content}
-                            <Button $remove>🗑</Button>
-                        </Item>
-                    </>
+                            🗑
+                        </Button>
+                    </Item>
                 ))}
             </StyledList>
         </>

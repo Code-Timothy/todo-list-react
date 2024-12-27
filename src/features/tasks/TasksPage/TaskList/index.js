@@ -3,7 +3,8 @@ import { useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import searchQueryParamName from "../searchQueryParamName";
 import Item from "../../../../common/Item";
-import { List, StyledLink, Button, Content, Input } from "./styled";
+import Button from "../../../../common/Button";
+import { List, StyledLink, Content, Input } from "./styled";
 import {
   selectHideDone,
   selectTaskIsEdit,

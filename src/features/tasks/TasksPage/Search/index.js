@@ -1,6 +1,6 @@
 import { useLocation, useHistory } from "react-router-dom";
 import searchQueryParamName from "../searchQueryParamName";
-import Input from "../Input";
+import Input from "../../../../common/Input";
 import { Wrapper } from "./styled";
 
 const Search = () => {

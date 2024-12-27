@@ -9,6 +9,11 @@ const Item = styled.li`
     border-bottom: 1px solid ${({ theme }) => theme.colors.alto};
     word-break: break-word;
 
+    ${({ singleButton }) => singleButton && css`
+        grid-template-columns: 1fr auto;
+        justify-content: space-between;
+    `}
+
     ${({ hidden }) => hidden && css`
         display: none;
     `}

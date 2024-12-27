@@ -8,6 +8,7 @@ export const StyledNavigation = styled.nav`
 export const StyledNavList = styled.ul`
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
     margin: 0;
     padding: 10px;

@@ -27,3 +27,18 @@ export const StyledNavLink = styled(NavLink)`
     color: white;
     text-decoration: none;
 `;
+
+export const StyledButton = styled.button`
+    background-color: ${({ theme }) => theme.colors.primaryColor};
+    color: ${({ theme }) => theme.colors.white};
+    border: none;
+    font-size: 24px;
+    padding: 3px 0 0 0;
+    transition: 1s;
+
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.1);
+        opacity: 80%;
+    }
+`;

@@ -53,6 +53,13 @@ const tasksSlice = createSlice({
                 task.comments.push({ content: comment, id: nanoid() });
             }
         },
+        removeTaskComment: ({ tasks }, { payload: { taskId, commentId } }) => {
+            const task = tasks.find(({ id }) => id === taskId);
+            if (task) {
+                const commentIndex = task.comments.findIndex(({ id }) => id === commentId);
+                task.comments.splice(commentIndex, 1);
+            }
+        },
     },
 });
 
@@ -68,6 +75,7 @@ export const {
     fetchExampleTasksRequest,
     fetchExampleTasksSuccess,
     addCommentToTask,
+    removeTaskComment,
 } = tasksSlice.actions;
 
 export const selectTasksState = state => state.tasks;

@@ -12,6 +12,17 @@ const Item = styled.li`
     ${({ singleButton }) => singleButton && css`
         grid-template-columns: 1fr auto auto;
         justify-content: space-between;
+
+        @media (max-width:${({ theme }) => theme.breakpoints.mobile}px){
+            grid-template-columns: 1fr 80px auto;
+            gap: 5px;
+            font-size: 14px;
+        }
+
+        @media (max-width:${({ theme }) => theme.breakpoints.smallMobile}px){
+            grid-template-columns: 1fr 70px auto;
+            font-size: 12px;
+        }
     `}
 
     ${({ hidden }) => hidden && css`

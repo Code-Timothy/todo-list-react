@@ -7,6 +7,10 @@ export const StyledList = styled.ul`
     padding: 0;
 `;
 
+export const StyledDateLabel = styled.p`
+    color: ${({ theme }) => theme.colors.primaryColor};
+`;
+
 export const StyledForm = styled.form`
     display: grid;
     grid-template-columns: 1fr auto;

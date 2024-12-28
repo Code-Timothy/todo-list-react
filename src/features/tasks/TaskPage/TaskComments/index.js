@@ -5,7 +5,7 @@ import { addCommentToTask, getTaskById, removeTaskComment } from "../../tasksSli
 import Item from "../../../../common/Item";
 import Input from "../../../../common/Input";
 import Button from "../../../../common/Button";
-import { StyledList, StyledForm, StyledButton } from "./styled";
+import { StyledList, StyledForm, StyledButton, StyledDateLabel } from "./styled";
 
 const TaskComments = () => {
     const { id } = useParams();
@@ -37,7 +37,9 @@ const TaskComments = () => {
                         key={comment.id}
                     >
                         {comment.content}
-                        <p>Dodano: {comment.date}</p>
+                        <StyledDateLabel>
+                            Dodano: {comment.date}
+                        </StyledDateLabel>
                         <Button
                             $remove
                             onClick={() => dispatch(removeTaskComment({ taskId: id, commentId: comment.id }))}

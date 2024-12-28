@@ -37,6 +37,7 @@ const TaskComments = () => {
                         key={comment.id}
                     >
                         {comment.content}
+                        <p>Dodano: {comment.date}</p>
                         <Button
                             $remove
                             onClick={() => dispatch(removeTaskComment({ taskId: id, commentId: comment.id }))}

@@ -10,7 +10,7 @@ const Item = styled.li`
     word-break: break-word;
 
     ${({ singleButton }) => singleButton && css`
-        grid-template-columns: 1fr auto;
+        grid-template-columns: 1fr auto auto;
         justify-content: space-between;
     `}
 

@@ -50,7 +50,7 @@ const tasksSlice = createSlice({
             const task = tasks.find(({ id }) => id === taskId);
 
             if (task) {
-                task.comments.push({ content: comment, id: nanoid() });
+                task.comments.push({ content: comment, id: nanoid(), date: (new Date).toLocaleString(), });
             }
         },
         removeTaskComment: ({ tasks }, { payload: { taskId, commentId } }) => {

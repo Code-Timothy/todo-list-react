@@ -42,7 +42,7 @@ Let's try [Here](https://code-timothy.github.io/todo-list-react/)!
 
 ## 👓 Preview
 
-![gif how to use the app](/src/for_README/howtouse6.gif)
+![gif how to use the app](/for_README/howtouse6.gif)
 
 ## 👩🏻‍💻 Technologies Used:
 ![React](https://img.shields.io/badge/React-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)

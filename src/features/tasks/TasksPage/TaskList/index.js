@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { toTask } from "../../../../routes";
 import searchQueryParamName from "../searchQueryParamName";
 import Item from "../../../../common/Item";
 import Button from "../../../../common/Button";
@@ -54,7 +55,7 @@ const TaskList = () => {
             />
           ) : (
             <Content $done={task.done}>
-              <StyledLink to={`/zadania/${task.id}`}>{task.content}</StyledLink>
+              <StyledLink to={toTask({ id: task.id })}>{task.content}</StyledLink>
             </Content>
           )}
 
